@@ -3,9 +3,9 @@ campsites/campsitesId */
 //we chained them to be one single statement by removing .app and the path from the parameters
 
 const express = require("express");
-const campsiteRouter = express.Router();
+const promotionRouter = express.Router();
 
-campsiteRouter
+promotionRouter
   .route("/")
   .all((req, res, next) => {
     res.statusCode = 200;
@@ -13,7 +13,7 @@ campsiteRouter
     next();
   })
   .get((req, res) => {
-    res.end("Will send all the campsites to you");
+    res.end("Will send all the promotions to you");
   })
   .post((req, res) => {
     res.end(
@@ -22,13 +22,13 @@ campsiteRouter
   })
   .put((req, res) => {
     res.statusCode = 403;
-    res.end("PUT operation not supported on /campsites");
+    res.end("PUT operation not supported on /promotions");
   })
   .delete((req, res) => {
-    res.end("Deleting all campsites");
+    res.end("Deleting all promotions");
   });
 
-campsiteRouter
+promotionRouter
   .route("/:campsiteId")
   .all((req, res, next) => {
     res.statusCode = 200;
@@ -36,7 +36,7 @@ campsiteRouter
     next();
   })
   .get((req, res) => {
-    res.end(`Will send all the campsites to you ${req.params.campsiteId}`);
+    res.end(`Will send all the promotions to you ${req.params.campsiteId}`);
   })
   .post((req, res) => {
     res.end(
@@ -44,10 +44,10 @@ campsiteRouter
     );
   })
   .put((req, res) => {
-    res.end("PUT operation not supported on /campsites");
+    res.end("PUT operation not supported on /promotions");
   })
   .delete((req, res) => {
-    res.end("Deleting all campsites");
+    res.end("Deleting all promotions");
   });
 
-module.exports = campsiteRouter;
+module.exports = promotionRouter;
