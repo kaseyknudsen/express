@@ -40,11 +40,11 @@ campsiteRouter
   })
   .post((req, res) => {
     res.end(
-      `Will add the campsite: ${req.body.name} with description: ${req.body.description}`
+      `Will add the campsite: ${req.params.campsiteId} ${req.body.name} with description: ${req.body.description}`
     );
   })
   .put((req, res) => {
-    res.end(`Updating campsites: ${req.body.name} with description: ${req.body.description}`);
+    res.end(`Updating campsites: ${req.params.campsiteId} ${req.body.name} with description: ${req.body.description}`);
   })
   .delete((req, res) => {
     res.end("Deleting all campsites");

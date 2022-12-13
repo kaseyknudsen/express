@@ -36,11 +36,11 @@ partnerRouter
   })
   .post((req, res) => {
     res.end(
-      `Will add the partners: ${req.body.name} with description: ${req.body.description}`
+      `Will add the partners: ${req.params.partnerId} ${req.body.name} with description: ${req.body.description}`
     );
   })
   .put((req, res) => {
-    res.end(`Updating partners: ${req.body.name} with description: ${req.body.description}`);
+    res.end(`Updating partners: ${req.params.partnerId} ${req.body.name} with description: ${req.body.description}`);
   })
   .delete((req, res) => {
     res.end("Deleting all partners");

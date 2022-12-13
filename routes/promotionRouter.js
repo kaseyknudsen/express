@@ -1,7 +1,3 @@
-/* this file will contain the code for handling the REST API endpoints for campsites and 
-campsites/campsitesId */
-//we chained them to be one single statement by removing .app and the path from the parameters
-
 const express = require("express");
 const promotionRouter = express.Router();
 
@@ -36,15 +32,15 @@ promotionRouter
     next();
   })
   .get((req, res) => {
-    res.end(`Will send all the promotions to you ${req.params.promotionsId}`);
+    res.end(`Will send all the promotions to you ${req.params.promotionId}`);
   })
   .post((req, res) => {
     res.end(
-      `Will add the promotion: ${req.body.name} with description: ${req.body.description}`
+      `Will add the promotion: ${req.params.promotionId} ${req.body.name} with description: ${req.body.description}`
     );
   })
   .put((req, res) => {
-    res.end(`Updating promotions: ${req.body.name} with description: ${req.body.description}`);
+    res.end(`Updating promotions: ${req.params.promotionId} ${req.body.name} with description: ${req.body.description}`);
   })
   .delete((req, res) => {
     res.end("Deleting all promotions");
