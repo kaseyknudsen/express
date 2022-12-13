@@ -22,7 +22,7 @@ campsiteRouter
   })
   .put((req, res) => {
     res.statusCode = 403;
-    res.end("PUT operation not supported on /campsites");
+    res.end(`Updating campsites: ${req.body.name} with description: ${req.body.description}`);
   })
   .delete((req, res) => {
     res.end("Deleting all campsites");
@@ -44,7 +44,7 @@ campsiteRouter
     );
   })
   .put((req, res) => {
-    res.end("PUT operation not supported on /campsites");
+    res.end(`Updating campsites: ${req.body.name} with description: ${req.body.description}`);
   })
   .delete((req, res) => {
     res.end("Deleting all campsites");

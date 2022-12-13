@@ -17,34 +17,34 @@ promotionRouter
   })
   .post((req, res) => {
     res.end(
-      `Will add the campsite: ${req.body.name} with description: ${req.body.description}`
+      `Will add promotion: ${req.body.name} with description: ${req.body.description}`
     );
   })
   .put((req, res) => {
     res.statusCode = 403;
-    res.end("PUT operation not supported on /promotions");
+    res.end(`Updating promotions: ${req.body.name} with description: ${req.body.description}`);
   })
   .delete((req, res) => {
     res.end("Deleting all promotions");
   });
 
 promotionRouter
-  .route("/:campsiteId")
+  .route("/:promotionId")
   .all((req, res, next) => {
     res.statusCode = 200;
     res.setHeader("Content-Type", "text/plain");
     next();
   })
   .get((req, res) => {
-    res.end(`Will send all the promotions to you ${req.params.campsiteId}`);
+    res.end(`Will send all the promotions to you ${req.params.promotionsId}`);
   })
   .post((req, res) => {
     res.end(
-      `Will add the campsite: ${req.body.name} with description: ${req.body.description}`
+      `Will add the promotion: ${req.body.name} with description: ${req.body.description}`
     );
   })
   .put((req, res) => {
-    res.end("PUT operation not supported on /promotions");
+    res.end(`Updating promotions: ${req.body.name} with description: ${req.body.description}`);
   })
   .delete((req, res) => {
     res.end("Deleting all promotions");
